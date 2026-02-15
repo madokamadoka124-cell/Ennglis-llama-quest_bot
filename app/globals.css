@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 45 30% 97%;
+    --foreground: 220 25% 12%;
+    --card: 40 25% 99%;
+    --card-foreground: 220 25% 12%;
+    --popover: 40 25% 99%;
+    --popover-foreground: 220 25% 12%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 170 55% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 15% 93%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 280 60% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 25 95% 53%;
+    --chart-1: 25 95% 53%;
+    --chart-2: 170 55% 45%;
+    --chart-3: 280 60% 55%;
+    --chart-4: 45 90% 55%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.75rem;
+    --success: 145 65% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 220 25% 12%;
+    --coins: 45 90% 55%;
+    --streak: 25 95% 53%;
+    --xp: 170 55% 45%;
+  }
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 40 15% 95%;
+    --card: 220 18% 12%;
+    --card-foreground: 40 15% 95%;
+    --popover: 220 18% 12%;
+    --popover-foreground: 40 15% 95%;
+    --primary: 25 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 170 55% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 280 60% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 25 95% 55%;
+    --chart-1: 25 95% 55%;
+    --chart-2: 170 55% 50%;
+    --chart-3: 280 60% 60%;
+    --chart-4: 45 90% 55%;
+    --chart-5: 340 75% 55%;
+    --success: 145 65% 48%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 220 25% 12%;
+    --coins: 45 90% 55%;
+    --streak: 25 95% 55%;
+    --xp: 170 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(25 95% 53% / 0.4); }
+  50% { box-shadow: 0 0 20px 4px hsl(25 95% 53% / 0.2); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Hide scrollbar for mobile app feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
